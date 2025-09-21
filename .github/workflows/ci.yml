@@ -31,7 +31,7 @@ jobs:
         run: yarn jest -u
         if: "always() && contains(github.event.head_commit.message, '[ci update snapshots]')"
       - name: Collect artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Image snapshots (Node.js 10 base test)
@@ -59,7 +59,7 @@ jobs:
       - name: Run tests
         run: yarn test
       - name: Collect artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Image snapshots (Node.js ${{ matrix.node-version }} matrix test)
